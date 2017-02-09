@@ -84,7 +84,7 @@ void Point(coordinates point, float size) {
 
 void draw() {
 	coordinates line1 { 1, 1, 1, -5, 4.85, 5, 4.85 };
-	coordinates line2 { 0, 1, 1, -5, -0.5f, 5, -0.5f};
+	coordinates line2 { 0, 1, 1, -5, -0.5f, 5, -0.5f };
 	coordinates line3 { 0, 0, 1, -2.5f, 5, -2.5f, -0.5f };
 	coordinates line4 { 0, 0, 1, 2.5f, 5, 2.5f, -0.5f };
 	width = 10;
