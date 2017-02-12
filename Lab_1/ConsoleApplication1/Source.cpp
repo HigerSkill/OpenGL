@@ -7,7 +7,7 @@
 #include <windows.h>
 #include <GL/gl.h>
 #include <GL/glu.h>
-#include <C:\lib\GLAUX.H>
+#include <GLAUX.H>
 
 #pragma comment (lib,"opengl32.lib")
 #pragma comment (lib,"glu32.lib")
@@ -59,6 +59,8 @@ void Triangles(coordinates triangle) {
 }
 
 void Line(coordinates line, float width) {
+	glLineWidth(width);
+	
 	glBegin(GL_LINES);
 	
 	glColor3d(line.r, line.g, line.b);
@@ -67,13 +69,11 @@ void Line(coordinates line, float width) {
 	glVertex3d(line.x2, line.y2, 0);
 	
 	glEnd();
-	
-	glLineWidth(width);
 }
 
 void Point(coordinates point, float size) {
 	glPointSize(size);
-
+	
 	glBegin(GL_POINTS);
 
 	glColor3d(point.r, point.g, point.b);
