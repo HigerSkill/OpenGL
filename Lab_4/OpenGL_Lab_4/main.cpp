@@ -77,26 +77,6 @@ void DrawSerpinski(float x1, float y1,
     }
 }
 
- void DrawKox(int n, float x1, float y1, float x2, float y2)
-{
-    if (n<=0) return;
-    if (n == 1) DrawLine(x1, y1, 0, x2, y2, 0, 1, 1, 1);
-    else {
-        float x3, y3, x4, y4, x5, y5;
-        x3 = x1 + (x2 - x1)/3;   y3 = y1 + (y2 - y1)/3;
-        DrawKox(n-1, x1, y1, x3, y3);
-        
-        x4 = x1 + (x2 - x1)/2 - (y2-y1)/4;   y4 = (y1 + y2)/2 + (x2-x1)/4;
-        x5 = x1 + 2*(x2 - x1)/3;  y5 = y1 + 2*(y2 - y1)/3;
-        DrawKox(n-1, x3, y3, x4, y4);
-        DrawKox(n-1, x4, y4, x5, y5);
-        DrawKox(n-1, x5, y5, x2, y2);  }
-}
-
-
-
-
-
 //OpenGL initialize
 void resize(int width, int height){
     
@@ -127,12 +107,10 @@ void renderScene(void) {
               x+lx, 1.0f,  z+lz,
               0.0f, 1.0f,  0.0f);
     
-   // DrawSphere();
-    
     glTranslated(0,0,-10);
     
     int n;
-    int nmax = 8; //Количество уровней
+    int nmax = 8; //Levels
     
     n = TickCount() / 100 % (nmax * 2);
     
